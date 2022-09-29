@@ -1,10 +1,12 @@
 import './App.css';
 import youtubeData from './data/youtubeData.json';
+import Layout from './components/shared/Layout';
 
 function App() {
-  console.log('youtubeData:', youtubeData['data']);
   return (
-    <div>리액트로 데이터 불러오기</div>
+    <Layout>
+      <div>콘텐츠!</div>
+    </Layout>
   );
 }
 
