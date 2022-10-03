@@ -1,9 +1,10 @@
 import Layout from '../components/shared/Layout';
+import styles from './Explore.module.css';
 
 function Explore(){
     return (
         <Layout activeMenu="explore">
-            <div>*탐색</div>
+            <div className={styles.container}>*탐색</div>
         </Layout>
     );
 }

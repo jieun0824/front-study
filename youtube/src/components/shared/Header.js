@@ -5,12 +5,16 @@ import { IoSearchOutline } from 'react-icons/io5';
 import { BsGrid3X3Gap } from 'react-icons/bs';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 
-function Header(){
+function Header({changeSet, showMenu}){
+
+
     return (
     <div className={styles.header}>
 
         <div className={styles.tab}>
-            <FiMenu className={styles.icon}/> 
+            
+            <FiMenu className={styles.icon} onClick={changeSet}/>
+
             <img src={youtube_logo} alt="로고" className={styles.log}/>
         </div>
 

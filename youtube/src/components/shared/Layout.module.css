@@ -21,6 +21,6 @@
     margin-left: 240px; 
 }
 
-.invisible{
-    display: hidden;
-} 
+/* .invisible{
+    visibility: hidden;
+}  */
