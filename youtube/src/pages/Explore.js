@@ -1,10 +1,11 @@
 import Layout from '../components/shared/Layout';
+import ContentsLayout from '../components/shared/ContentsLayout';
 import styles from './Explore.module.css';
 
 function Explore(){
     return (
         <Layout activeMenu="explore">
-            <div className={styles.container}>*탐색</div>
+            <ContentsLayout>컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠컨텐츠</ContentsLayout>
         </Layout>
     );
 }

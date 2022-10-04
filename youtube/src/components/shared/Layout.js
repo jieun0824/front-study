@@ -19,7 +19,7 @@ function Layout({children, activeMenu}){
             
             <div className={styles.layout}>
                 {showMenu===true&&<Menu activeMenu={activeMenu}/>}
-                    <div className={styles.contents}>
+                    <div className={showMenu===true?styles.contents:styles.contentsClose}>
                         {children}
                     </div>
             </div>
