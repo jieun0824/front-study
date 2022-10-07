@@ -2,6 +2,7 @@ import {useState} from 'react';
 import styles from './Layout.module.css';
 import Header from './Header';
 import Menu from './Menu';
+import HomeFilter from '../Home/HomeFilter';
 
 function Layout({children, activeMenu}){
 
@@ -17,9 +18,11 @@ function Layout({children, activeMenu}){
 
             <Header changeSet={changeSet} showMenu={showMenu}/>
             
+            
             <div className={styles.layout}>
+            <HomeFilter/>
                 {showMenu===true&&<Menu activeMenu={activeMenu}/>}
-                    <div className={showMenu===true?styles.contents:styles.contentsClose}>
+                    <div className={showMenu===true?styles.contents:styles.contentsClose} style={{marginTop: activeMenu==='home'&&'54px'}}>
                         {children}
                     </div>
             </div>
