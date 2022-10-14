@@ -5,7 +5,7 @@ import youtubeData from '../data/youtubeData.json';
 import styles from './Home.module.css'
 import {useState} from 'react';
 
-const target = ['전체','Music', 'Entertainment', 'Comedy'];
+const target = ['전체','BTS', 'LISA', '아이폰'];
 
 function Home(){
 
@@ -25,7 +25,7 @@ function Home(){
     }
 
     function filterFunc(data){
-        if (filter==='전체'||data['category']===filter) {return true} else {return false}
+        if (filter==='전체'||data['title'].includes(filter)||data['description'].includes(filter)) {return true} else {return false}
     }    
 
     return (
