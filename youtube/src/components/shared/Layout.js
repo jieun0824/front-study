@@ -11,6 +11,7 @@ function Layout({children, activeMenu}){
     function changeSet(){
         setShowMenu(!showMenu);
     }
+    
 
 
     return (
@@ -20,9 +21,8 @@ function Layout({children, activeMenu}){
             
             
             <div className={styles.layout}>
-            <HomeFilter/>
                 {showMenu===true&&<Menu activeMenu={activeMenu}/>}
-                    <div className={showMenu===true?styles.contents:styles.contentsClose} style={{marginTop: activeMenu==='home'&&'54px'}}>
+                    <div className={showMenu===true?styles.contents:styles.contentsClose}>
                         {children}
                     </div>
             </div>

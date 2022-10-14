@@ -1,15 +1,11 @@
 import styles from './HomeFilter.module.css'
 
-function HomeFilter(){
+function HomeFilter({filter, text, onClickFilter}){
     return(
-        <div className={styles.HomeHeader}>
-            <div className={styles.buttons}>
-                <button>전체</button>
-                <button>BTS</button>
-                <button>LISA</button>
-                <button>아이폰</button>
-            </div>
-        </div>
+        <button className={filter === text?styles.black:styles.gray}
+        onClick={onClickFilter}>
+            {text}
+        </button>
     )
 }
 
