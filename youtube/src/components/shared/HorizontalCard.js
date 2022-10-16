@@ -1,7 +1,10 @@
 import { FaStaylinked } from 'react-icons/fa';
-import styles from './ExploreCard.module.css';
+import styles from './HorizontalCard.module.css';
+import moment from 'moment';
+import 'moment/locale/ko';
+import {ProcessViewCount, ProcessUploadDate} from '../../utils'
 
-function ExploreCard({data}){
+function HorizontalCard({data}){
     return (
         <a href={`http://www.youtube.com/watch?v=${data.id}`}>
             <div className={styles.card}>
@@ -16,8 +19,8 @@ function ExploreCard({data}){
                         className={styles.uploader}>
                             {data.channelTitle}
                         </a>
-                        <div className={styles.view}>{data.viewCount}</div>
-                        <div className={styles.time}>{data.date}</div>
+                        <div className={styles.view}>{ProcessViewCount(data.viewCount)}</div>
+                        <div className={styles.time}>{ProcessUploadDate(data.date)}</div>
                     </div>
                     <div className={styles.desc}>{data.description}</div>
                 </div>
@@ -26,4 +29,4 @@ function ExploreCard({data}){
     );
 }
 
-export default ExploreCard;
+export default HorizontalCard;
