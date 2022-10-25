@@ -5,7 +5,7 @@ import youtubeData from '../data/youtubeData.json';
 import styles from './Home.module.css'
 import {useState} from 'react';
 
-const target = ['전체','BTS', 'LISA', '아이폰'];
+const target = ['전체','BTS', 'LISA', '아이폰']; 
 
 function Home(){
 
