@@ -17,6 +17,7 @@ function App() {
   //UI의 현재 상태를 state로 저장(닫힌상태/열린상태 -> 형식은 상관 없다! 모달창상태 표현만 가능하면 된다.)
   let [modal, setModal] = useState(false);
   let [number, setNumber] = useState(0);
+  let [입력값, 입력값변경] = useState('');
 
 
   return (
@@ -54,14 +55,21 @@ function App() {
           return (
             <div className='list' key={i}>
               <button>버튼</button>
-              <h4 onClick={()=>{
+              <h4 onClick={(e)=>{
                   setModal(!modal);
                   setNumber(i);
                 }}>{a}
-                <span onClick={()=>{setFuncs[i](states[i]+1)}}>👍</span>
+                <span onClick={(e)=>{
+                  e.stopPropagation();
+                  setFuncs[i](states[i]+1)}}>👍</span>
                 {states[i]}
               </h4>
               <p>2월 17일 발행</p>  
+              <button onClick={()=>{
+                let copy = [...글제목];
+                copy.splice(i, 1)
+                b(copy)
+              }}>삭제</button>
             </div>
           )
 
@@ -70,6 +78,14 @@ function App() {
 
         
       }
+      
+      <input onChange={(e)=>{입력값변경(e.target.value)}}/>
+      <button onClick={()=>{
+        let copy = [...글제목];
+        copy.push(입력값);
+        b(copy);
+      }}>버튼</button>
+
 
       {
           (modal===true) ? <Modal divnum={글제목} 글수정={b} 글번호={number}/> : null //null - 텅 빈 값
