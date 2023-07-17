@@ -1,13 +1,15 @@
-import {AiOutlineSearch, BsFillKeyboardFill, BsFillMicFill} from 'react-icons/fa'
-import google_logo from '../data/google-logo.png';
-import {Link} from 'react-router-dom';
+import HomeHeader from '../Home/HomeHeader.js';
+import HomeBody from '../Home/HomeBody.js';
+import Footer from '../shared/Footer.js';
 
 function Home(){
     return (
-        
-        <div>
-            <Link to ='/'><img src={google_logo}/></Link>
-        </div>
+        <>
+            <HomeHeader/>
+            <HomeBody/>
+            <Footer/>
+        </>
+
     )
 }
 

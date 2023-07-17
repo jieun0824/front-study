@@ -1,0 +1,16 @@
+.container {
+     display: flex;
+     align-items: center;
+     padding: 6px;
+     font-size: 14px;
+     justify-content: space-between;
+}
+
+
+.containerItem1 > span, .containerItem2 > span {
+    padding: 5px;
+}
+
+.containerItem1, .containerItem2 {
+    text-align: center;
+}

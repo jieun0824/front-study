@@ -18,8 +18,6 @@ function Layout({children, activeMenu}){
         <div className={styles.container}>
 
             <Header changeSet={changeSet} showMenu={showMenu}/>
-            
-            
             <div className={styles.layout}>
                 {showMenu===true&&<Menu activeMenu={activeMenu}/>}
                     <div className={showMenu===true?styles.contents:styles.contentsClose}>
