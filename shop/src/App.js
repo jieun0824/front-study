@@ -6,9 +6,12 @@ import {Container, Navbar, Nav} from 'react-bootstrap'
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import Detail from './routes/Detail';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import data from '../src/data';
 import axios from 'axios';
+import Cart from './routes/Cart';
+
+
 
 
 function Card({data, index, image}){
@@ -32,12 +35,13 @@ function App() {
   useEffect(()=>{
     console.log(shoes)
   }, [shoes])
-  let [count, setCount] = useState(0);
+  let [count, setCount] = useState(0)
   function plusCount(){
     count++;
     setCount(count);
     console.log(count)
   }
+  let [재고] = useState([10, 11, 12])
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
@@ -93,7 +97,10 @@ function App() {
             </div>
           </>
         }/>
-        <Route path='/detail/:id' element={<Detail shoes={shoes}/>}/>
+        <Route path='/detail/:id' element={
+        <Detail shoes={shoes}/>
+        }/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='*' element={<>없는페이지요</>}/>
         <Route path='/about' element={<About/>}>
           <Route path='member' element = {<div>멤버임</div>}/>
