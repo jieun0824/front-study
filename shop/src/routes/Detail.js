@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from 'styled-components'
 import Nav from 'react-bootstrap/Nav';
+import { useSelector, useDispatch } from "react-redux";
+import {plus} from '../store'
 
 function Detail(props){
+
+  let dispatch = useDispatch();
+
   let {id} = useParams(); //현재 url의 파라미터 정보가 이 자리에 남는다.(유저가 :id 자리에 적은거 가져와줌)
   let currentShoes = props.shoes.find((a)=>{
     return a.id===parseInt(id)
@@ -58,7 +63,7 @@ function Detail(props){
       <h4 className="pt-5">{currentShoes.title}</h4>
       <p>{currentShoes.content}</p>
       <p>{currentShoes.price}</p>
-      <button className="btn btn-danger">주문하기</button> 
+      <button className="btn btn-danger" onClick={()=>{dispatch(plus(currentShoes))}}>주문하기</button> 
     </div>
   </div>
   <div className="tab">
