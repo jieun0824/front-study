@@ -10,6 +10,7 @@ import { useEffect, useState} from 'react';
 import data from '../src/data';
 import axios from 'axios';
 import Cart from './routes/Cart';
+import { useQuery } from 'react-query';
 
 
 
@@ -23,6 +24,7 @@ function Card({data, index, image}){
       </div>
     )
   }
+
 
 
 
@@ -42,6 +44,16 @@ function App() {
     console.log(count)
   }
   let [재고] = useState([10, 11, 12])
+
+
+
+  let result = useQuery('작명', ()=>{
+    return axios.get('https://codingapple1.github.io/userdata.json')
+    .then((a)=>{
+     return a.data
+    })
+  })
+  
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
@@ -52,6 +64,7 @@ function App() {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing" onClick={()=>{ navigate('/detail')}}>Pricing</Nav.Link>
           </Nav>
+          <Nav className='ms-auto' style={{color:'white'}}>반가워요 kim</Nav>
         </Container>
       </Navbar>
 
